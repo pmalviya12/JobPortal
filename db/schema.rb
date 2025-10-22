@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_06_104439) do
+ActiveRecord::Schema[7.0].define(version: 2025_10_22_151535) do
   create_table "applied_jobs", force: :cascade do |t|
     t.integer "job_id", null: false
     t.integer "user_id", null: false
@@ -42,13 +42,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_06_104439) do
     t.string "link_to_apply"
     t.string "salary_range"
     t.string "job_location"
-    t.string "status"
     t.integer "total_positions"
     t.integer "posted_by_id"
     t.integer "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uuid"
+    t.integer "status"
     t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 

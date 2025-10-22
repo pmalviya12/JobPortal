@@ -7,6 +7,7 @@ class Company::JobsController < ApplicationController
 
   def new
     @job = current_company.jobs.new
+    debugger
   end
 
   def create
