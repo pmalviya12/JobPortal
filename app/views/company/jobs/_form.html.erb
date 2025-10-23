@@ -1,6 +1,6 @@
 <div class="card shadow">
   <div class="card-body">
-    <%= form_with(model: [:company, job]) do |form| %>
+    <%= form_with(model: [:company, job], data: {turbo: false}) do |form| %>
       <%= form.hidden_field :posted_by_id, value: current_user.id %>
       <div class="form-group">
         <%= form.label :title, class: 'mb-2 mt-3 fw-bold' %>
