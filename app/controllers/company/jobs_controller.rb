@@ -22,6 +22,25 @@ class Company::JobsController < ApplicationController
     @job = current_company.jobs.find(params[:id])
   end
 
+  def edit
+    @job = current_company.jobs.find(params[:id])
+  end
+
+  def update
+    @job = current_company.jobs.find(params[:id])
+    if @job.update(job_params)
+      redirect_to @job
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @job = current_company.jobs.find(params[:id])
+    @job.destroy
+    redirect_to company_job_path
+  end
+
   private
 
   def job_params
